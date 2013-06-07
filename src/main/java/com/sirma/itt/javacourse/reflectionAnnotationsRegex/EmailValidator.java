@@ -26,8 +26,7 @@ public final class EmailValidator {
 			throw new IllegalArgumentException(
 					"Can't validate a null string for an email");
 		}
-		Pattern emailPattern = Pattern
-				.compile("^[a-z][\\w[.-]]+@[a-z][\\w[.-]]+$");
+		Pattern emailPattern = Pattern.compile("^[a-z][\\w.-]+@[a-z][\\w.-]+$");
 		Matcher matcher = emailPattern.matcher(mail);
 		return matcher.find();
 	}

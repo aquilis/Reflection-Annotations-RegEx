@@ -73,8 +73,7 @@ public final class Examiner {
 	 */
 	public static void instantiateByName() throws ClassNotFoundException,
 			IllegalAccessException, InstantiationException {
-		Class<?> cls = Class
-				.forName("com.sirma.itt.javacourse.reflectionAnnotationsRegex.Person");
+		Class<?> cls = Class.forName(Person.class.getCanonicalName());
 		Object person = cls.newInstance();
 		System.out.println("Superclass: " + cls.getSuperclass());
 		System.out.println("Implemented interfaces: ");
@@ -133,7 +132,7 @@ public final class Examiner {
 	public static void main(String[] args) throws IllegalAccessException,
 			ClassNotFoundException, InstantiationException,
 			NoSuchMethodException, InvocationTargetException {
-		examinePersonFields();
+		instantiateByName();
 	}
 
 }
